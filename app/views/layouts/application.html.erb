@@ -7,7 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% if user_signed_in? %>
+  <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+<% else %>
+  <p>
+    E-mail: fulano@example.com <br>
+    password: "password"
+  </p>
+<% end %>
 <%= yield %>
 
 </body>
